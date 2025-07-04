@@ -22,7 +22,7 @@ The seaborn.set_theme() or seaborn.set_style() function can be used to set the t
 data = pd.DataFrame({'x': np.arange(100), 'y': np.random.rand(100).cumsum()})
 
 # Set the theme
-sns.set_theme(style='darkgrid')
+sns.set_theme(style=('darkgrid'))
 # Alternatively
 # sns.set_style('darkgrid')
 
@@ -127,18 +127,18 @@ g=sns.displot(data=dffilter, x="agency" , y="price" , hue="agent",  kind='hist' 
 g.figure.suptitle("sns.displot(data=dffilter, x=agency , y=price , hue=agent,  kind='hist'  )"  )
 
 # Display the plot
-g.figure.show()
+plt.show()
 read = input("Wait for me....")
 #g.figure.clear()
 
 
 """"kind="kde" in Seaborn specifies the use of Kernel Density Estimation plots. KDE plots visualize the probability density of a continuous variable. Instead of discrete bins like in histograms, KDE plots use a continuous curve to estimate the underlying distribution of the data. This provides a smoother and often more informative representation of the data's distribution, especially for continuous variables."""
 #kind='kde'
-g=sns.displot(data=dffilter, x="price" , y="date_added" , kind='kde'  )
+g=sns.displot(data=dffilter, x="price" , y="date_added" , kind='hist'  )
 g.figure.suptitle("sns.displot(data=dffilter, x=price , y=date_added , kind='kde'  )"  )
 
 # Display the plot
-g.figure.show()
+plt.show()
 read = input("Wait for me....")
 #g.figure.clear()
 
@@ -148,7 +148,7 @@ g=sns.kdeplot(data=dffilter, x="price")
 g.figure.suptitle("sns.kdeplot(data=dffilter, x=price)"  )
 
 # Display the plot
-g.figure.show()
+plt.show()
 read = input("Wait for me....")
 #g.figure.clear()
 
@@ -159,7 +159,7 @@ A histogram is a classic visualization tool that represents the distribution of 
 g = sns.histplot(data=dffilter, x='agency', y='price', hue='agency', multiple="stack")
 g.figure.suptitle("sns.histplot(data=dffilter, x='agency', y='price', hue='agency', multiple=stack)"  )
 # Display the plot
-g.figure.show()
+plt.show()
 read = input("Wait for me....")
 #g.figure.clear()
 
@@ -182,7 +182,7 @@ The relationship between x and y can be shown for different subsets of the data 
 g=sns.lineplot(data=dffilter, x="agency" , y="price"  )
 g.figure.suptitle("sns.lineplot(data=dffilter, x=agency , y=price  )"  )
 # Display the plot
-g.figure.show()
+plt.show()
 read = input("Wait for me....")
 #g.figure.clear()
 
@@ -195,7 +195,7 @@ A bar plot represents an aggregate or statistical estimate for a numeric variabl
 g=sns.barplot(data=dffilter, x="agency", y="price", legend=False)
 g.figure.suptitle("sns.barplot(data=dffilter, x=agency, y=price, legend=False)"  )
 # Display the plot
-g.figure.show()
+plt.show()
 read = input("Wait for me....")
 #g.figure.clear()
 

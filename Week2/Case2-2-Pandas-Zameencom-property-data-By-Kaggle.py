@@ -4,7 +4,7 @@ import pandas as pd
 #  Read csv file to DataFrame
 #  Reference: https://pandas.pydata.org/docs/dev/reference/api/pandas.read_csv.html
 #  Note below, date formatting - In Pandas, DateTime is a data type that represents a single point in time. It is especially useful when dealing with time-series data like stock prices, weather records, economic indicators etc.
-df = pd.read_csv('Week2/zameencom-property-data-By-Kaggle-short.csv',delimiter=";",parse_dates=[14], date_format={'date_added': '%d-%m-%Y'})
+df = pd.read_csv('Week2/zameencom-property-data-By-Kaggle-short.csv',delimiter=";",parse_dates=["date_added"], date_format={'date_added': '%d-%m-%Y'})
 
 print(df)
 
@@ -107,13 +107,13 @@ print()
 
 
 #Conditional selection of rows using .loc
-second_row4 = df.loc[df['agency'] == 'Gateway Properties']
+second_row4 = df.loc[df['agency'] == 'Sukhera Estate & Builders']
 print("#Conditional selection of rows using .loc")
 print(second_row4)
 print()
 
 #Selecting a single column using .loc
-second_row5 = df.loc[:1,'agency']
+second_row5 = df.loc[:5,'agency']
 print("#Selecting a single column using .loc")
 print(second_row5)
 print()
@@ -131,7 +131,7 @@ print(second_row7)
 print()
 
 #Combined row and column selection using .loc
-second_row8 = df.loc[df['agency'] == 'Gateway Properties','location':'agency']
+second_row8 = df.loc[df['agency'] == 'Sukhera Estate & Builders','location':'agency']
 print("#Combined row and column selection using .loc")
 print(second_row8)
 print()
@@ -267,7 +267,7 @@ Renaming rows/columns"""
 # add a new row
 # Copy array from list and add to DataFrame
 # 3477952;82;"https://www.zameen.com/Property/lahore_model_town_6_kanal_excellent_house_for_sale_in_model_town-347795-8-12.html";"House2";2200000002;"Model Town2";"Lahore2";"Punjab2";312.483868658082;742.325685501099;02;"6 Kanal2";"For Sale2";02;"07-17-2019";"Real Biz International2";"Usama Khan2"
-
+print("------")
 df.loc[len(df.index)] = [3477952,82,"https://www.zameen.com/Property/lahore_model_town_6_kanal_excellent_house_for_sale_in_model_town-347795-8-12.html","House2",2200000002,"Model Town2","Lahore2","Punjab2",312.483868658082,742.325685501099,2,"6 Kanal2","For Sale2",2,"07-17-2019","Real Biz International2","Usama Khan2"] 
 print("Modified DataFrame - add a new row:")
 print(df)
